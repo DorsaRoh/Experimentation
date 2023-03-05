@@ -46,7 +46,6 @@ end_fill()
 begin_fill()
 color("violet")
 right(80)
-
 end_fill()
 #This function illustrates the outline of flower type #2
 def flowertwo_outline(x,y,length):
@@ -96,7 +95,6 @@ def flowerthree_outline(x,y,length):
 penup()
 setposition(x,y)
 pendown()
-
 color("black")
 for i in range(8):
 for i in range(2):
@@ -146,7 +144,6 @@ for i in range(curve):
 forward(length)
 if i % 2 == 0:
 right(angle)
-
 custom_circle(3,5,5)
 left(2)
 custom_circle(3,5,5)
@@ -196,7 +193,6 @@ def cloud_body(x,y):
 penup()
 setposition(x,y)
 pendown()
-
 white_circle(radius, cloudcolor)
 forward(radius)
 for i in range(4):
@@ -246,7 +242,6 @@ setposition(x_value-3,y_value)
 for i in range(2):
 pendown()
 circle(10)
-
 penup()
 forward(20)
 def cloud_mouth_panel_one(x_value,y_value):
@@ -296,7 +291,6 @@ setposition(x_value,y_value)
 pendown()
 x_value = x_value - pensize_value/2
 radius_value = radius_value - pensize_value
-
 end_fill()
 # This portion of the function draws the yellow arc
 right(180)
@@ -346,7 +340,6 @@ circle(radius_value,180)
 setposition(x_value,y_value)
 penup()
 x_value = x_value - pensize_value
-
 radius_value = radius_value - pensize_value
 end_fill()
 penup()
@@ -396,7 +389,6 @@ forward(20)
 penup()
 setposition(x_value,y_value+15)
 color("black")
-
 for i in range(2):
 pendown()
 begin_fill()
@@ -446,7 +438,6 @@ begin_fill()
 circle(7)
 end_fill()
 penup()
-
 forward(20)
 setposition(x_value-5,y_value)
 for i in range(2):
@@ -496,7 +487,6 @@ forward(bottom)
 backward(bottom)
 right(81)
 forward(32)
-
 right(218)
 forward(30)
 end_fill()
@@ -546,7 +536,6 @@ pendown()
 write ("optical", font = ("arial", 10, "bold"))
 penup()
 setposition(-162.5,332.5)
-
 pendown()
 write ("illusion!", font = ("arial", 10, "bold"))
 #This function illustrates hill #1, found at the bottom of each panel
@@ -561,7 +550,6 @@ for i in range(curve):
 forward(length)
 if i % 2 == 0:
 right(angle)
-
 def hillone_coloring(x,y,length,angle,curve):
 penup()
 left(20)
@@ -573,7 +561,6 @@ for i in range(curve):
 forward(length)
 if i % 2 == 0:
 right(angle)
-
 right(70)
 forward(10)
 right(90)
@@ -598,13 +585,11 @@ left(20)
 setposition(x-1,y-3)
 pendown()
 color("chartreuse3")
-
 begin_fill()
 for i in range(curve):
 forward(length)
 if i % 2 == 0:
 right(angle)
-
 right(70)
 forward(8)
 right(90)
@@ -649,7 +634,6 @@ right(90)
 penup()
 backward(bottom-1)
 forward(bottom)
-
 left(18)
 pendown()
 circle(71,345)
@@ -699,7 +683,6 @@ cloud_body(-90,-180)
 def cloudtwo_eyes(x_value,y_value):
 left(90)
 penup()
-
 setposition(x_value-10,y_value-5)
 color("black")
 for i in range(2):
@@ -749,7 +732,6 @@ end_fill()
 penup()
 right(90)
 setposition(a_value,b_value)
-
 pendown()
 color("palegoldenrod")
 begin_fill()
@@ -799,7 +781,6 @@ right(340)
 cloudtwo_panel_two()
 color("black")
 pensize(2)
-
 right(190)
 sun(-375,-100,20,10,-346.3,-98,-360,-125)
 left(375)
@@ -849,7 +830,6 @@ flowerone_body(-150,42,2)
 flowerone_outline(-150,42,1)
 right(200)
 flowertwo_body(-95,35,3)
-
 flowertwo_outline(-95,35,2)
 left(260)
 flowerthree_body(-145,83,5)
@@ -899,7 +879,6 @@ speechcloudone_paneltwo(-211,-242)
 pensize(1.5)
 left(270)
 bird(-30,380,20,70)
-
 bird(-10,360,15,70)
 bird(-30,-50,20,70)
 bird(-10,-70,15,70)
