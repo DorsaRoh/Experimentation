@@ -1,0 +1,905 @@
+from turtle import*
+speed(0)
+"""
+This program illustrates a comic strip using the Python commands, shapes and
+aspects of drawing we have learned in class with Turtle Graphics.
+"""
+#This function illustrates the outline of flower type #1
+def flowerone_outline(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+color("black")
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+#This function illustrates the body colouring of flower type #1
+def flowerone_body(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+color("darkviolet")
+begin_fill()
+for i in range(2):
+if i <1:
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+else:
+left(50)
+for i in range(8):
+for i in range(2):
+forward(length*1.5)
+left(45)
+forward(length*1.5)
+left(135)
+right(45)
+end_fill()
+begin_fill()
+color("violet")
+right(80)
+
+end_fill()
+#This function illustrates the outline of flower type #2
+def flowertwo_outline(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+color("black")
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+#This function illustrates the body colouring of flower type #2
+def flowertwo_body(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+color("goldenrod")
+begin_fill()
+for i in range(2):
+if i <1:
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+else:
+left(50)
+for i in range(8):
+for i in range(2):
+forward(length*1.5)
+left(45)
+forward(length*1.5)
+left(135)
+right(45)
+end_fill()
+begin_fill()
+color("khaki")
+right(80)
+end_fill()
+#This function illustrates the outline of flower type #3
+def flowerthree_outline(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+
+color("black")
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+#This function illustrates the body colouring of flower type #3
+def flowerthree_body(x,y,length):
+penup()
+setposition(x,y)
+pendown()
+color("tomato")
+begin_fill()
+for i in range(2):
+if i <1:
+for i in range(8):
+for i in range(2):
+forward(length*2)
+left(45)
+forward(length*2)
+left(135)
+right(45)
+else:
+left(50)
+for i in range(8):
+for i in range(2):
+forward(length*1.5)
+left(45)
+forward(length*1.5)
+left(135)
+right(45)
+end_fill()
+begin_fill()
+color("salmon")
+right(80)
+end_fill()
+#This function illustrates a stem of a flower
+def stem(length):
+penup()
+right(90)
+forward(length/20)
+pendown()
+def custom_circle(length,angle,curve):
+for i in range(curve):
+forward(length)
+if i % 2 == 0:
+right(angle)
+
+custom_circle(3,5,5)
+left(2)
+custom_circle(3,5,5)
+#PANELS
+def panel_colour():
+#To fill in the panels with colour
+begin_fill()
+pendown()
+color("lightsteelblue1")
+forward(400)
+left(90)
+forward(400)
+left(90)
+forward(400)
+left(90)
+forward(400)
+end_fill()
+#To add borders/outline to panels
+def panel_border():
+pendown()
+color("black")
+for i in range(4):
+left(90)
+forward(400)
+def panels():
+penup()
+setposition(-400,-400)
+pensize(2.5)
+panel_colour()
+setposition(-400,-400)
+panel_border()
+penup()
+setposition(-400,420)
+panel_colour()
+setposition(-400,420)
+panel_border()
+#CLOUDS
+def white_circle(radius, cloudcolor):
+color(cloudcolor)
+begin_fill()
+circle(radius)
+end_fill()
+radius = 25
+cloudcolor="white"
+#Defining the functions to draw the clouds
+def cloud_body(x,y):
+penup()
+setposition(x,y)
+pendown()
+
+white_circle(radius, cloudcolor)
+forward(radius)
+for i in range(4):
+white_circle(radius,cloudcolor)
+right(90)
+def cloud_border(x,y):
+penup()
+color("black")
+setposition(x,y)
+pendown()
+circle(26)
+forward(25)
+for i in range(4):
+circle(26)
+right(90)
+def cloud_eyes_panel_one(x_value,y_value):
+penup()
+setposition(x_value,y_value)
+color("black")
+#Cloud pupils:
+for i in range(2):
+pendown()
+begin_fill()
+circle(7)
+end_fill()
+penup()
+forward(20)
+setposition(x_value+3,y_value+5)
+for i in range(2):
+pendown()
+circle(10)
+penup()
+forward(20)
+def cloud_eyes_panel_two(x_value,y_value):
+penup()
+setposition(x_value,y_value)
+color("black")
+for i in range(2):
+pendown()
+begin_fill()
+circle(7)
+end_fill()
+penup()
+forward(20)
+#Cloud eye rings:
+setposition(x_value-3,y_value)
+for i in range(2):
+pendown()
+circle(10)
+
+penup()
+forward(20)
+def cloud_mouth_panel_one(x_value,y_value):
+penup()
+setposition(x_value-20,y_value-30)
+left(300)
+pensize(4)
+pendown()
+circle(40,50)
+penup()
+left(90)
+backward(5)
+pendown()
+circle(30,25)
+def cloud_mouth_panel_two(x_value,y_value):
+penup()
+setposition(x_value-20,y_value-30)
+left(300)
+right(210)
+pensize(4)
+pendown()
+begin_fill()
+circle(11,180)
+end_fill()
+#Defining a function that illustrates the rainbow
+def rainbow(x_value,y_value,radius_value,pensize_value):
+penup()
+pensize(pensize_value)
+# This portion of the function draws the red arc
+setposition(x_value+5,y_value)
+pendown()
+left(90)
+begin_fill()
+color("tomato")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value
+radius_value = radius_value - pensize_value
+end_fill()
+# This portion of the function draws the orange arc
+right(180)
+begin_fill()
+color("orange")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value/2
+radius_value = radius_value - pensize_value
+
+end_fill()
+# This portion of the function draws the yellow arc
+right(180)
+begin_fill()
+color("gold")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value/2
+radius_value = radius_value - pensize_value
+end_fill()
+# This portion of the function draws the green arc
+right(180)
+begin_fill()
+color("lawngreen")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value
+radius_value = radius_value - pensize_value
+end_fill()
+# This portion of the function draws the blue arc
+right(180)
+begin_fill()
+color("mediumturquoise")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value
+radius_value = radius_value - pensize_value
+end_fill()
+# This portion of the function draws the purple arc
+right(180)
+begin_fill()
+color("orchid")
+circle(radius_value,180)
+setposition(x_value,y_value)
+pendown()
+x_value = x_value - pensize_value
+radius_value = radius_value - pensize_value
+end_fill()
+# This portion of the function draws the sky underneath the rainbow
+right(180)
+begin_fill()
+color("lightsteelblue1")
+circle(radius_value,180)
+setposition(x_value,y_value)
+penup()
+x_value = x_value - pensize_value
+
+radius_value = radius_value - pensize_value
+end_fill()
+penup()
+setposition(-150,26)
+pendown()
+begin_fill()
+circle(1)
+end_fill()
+penup()
+pensize(3)
+color("black")
+setposition(-150,26)
+backward(5)
+forward(10)
+def rainbow_border(x_value=-11, y_value=26,radius=185, semi=180):
+for i in range(2):
+left(90)
+setposition(x_value,y_value)
+pensize(2)
+pendown()
+left(90)
+circle(radius, semi)
+penup()
+x_value = -55
+radius = 125
+def rainbow_eyes(x_value,y_value):
+#Cloud eye rings:
+penup()
+setposition(x_value-5,y_value+5)
+pensize(2)
+for i in range(2):
+pendown()
+color("black")
+circle(15)
+penup()
+forward(20)
+penup()
+setposition(x_value-5,y_value+6)
+for i in range(2):
+pendown()
+color("white")
+begin_fill()
+circle(13)
+end_fill()
+penup()
+forward(20)
+penup()
+setposition(x_value,y_value+15)
+color("black")
+
+for i in range(2):
+pendown()
+begin_fill()
+circle(8.5)
+end_fill()
+penup()
+forward(20)
+def rainbow_mouth(x_value,y_value):
+penup()
+setposition(x_value,y_value)
+pendown()
+pensize(2.5)
+right(90)
+begin_fill()
+circle(20,180)
+end_fill()
+penup()
+setposition(x_value+12,y_value-1.5)
+right(180)
+color("white")
+begin_fill()
+circle(10,180)
+end_fill()
+left(270)
+#This function illustrates the entirety of cloud #1
+def cloud_panel_one():
+cloud_border(-300,200)
+pensize(1)
+cloud_body(-300,200)
+cloud_eyes_panel_one(-300,200)
+cloud_mouth_panel_one(-300,200)
+#This function illustrates the entirety of cloud #2
+def cloudtwo_panel_one():
+right(50)
+pensize(4)
+cloud_border(-90,260)
+pensize(1)
+cloud_body(-90,260)
+def cloudtwo_eyes(x_value,y_value):
+left(90)
+penup()
+setposition(x_value-10,y_value-5)
+color("black")
+for i in range(2):
+pendown()
+begin_fill()
+circle(7)
+end_fill()
+penup()
+
+forward(20)
+setposition(x_value-5,y_value)
+for i in range(2):
+pendown()
+circle(10)
+penup()
+forward(20)
+cloudtwo_eyes(-80,285)
+def cloudtwo_mouth(x_value,y_value):
+penup()
+pensize(1)
+left(120)
+setposition(x_value,y_value)
+pensize(4)
+pendown()
+begin_fill()
+circle(12,180)
+end_fill()
+penup()
+right(180)
+setposition(x_value+6,y_value-3)
+pendown()
+color("black")
+begin_fill()
+circle(4,180)
+end_fill()
+cloudtwo_mouth(-105,257.5)
+#This function illustrates the entirety of the rainbow
+def rainbow_drawing():
+pensize(1)
+right(180)
+rainbow(-20,26,180,10)
+rainbow_border()
+left(90)
+rainbow_eyes(-200,180)
+rainbow_mouth(-215,180)\
+#These defined functions illustrate a speechbubble
+def speechbubble_cloud(x_value,y_value,colorvar,bottom=15):
+def speechbubble_body():
+penup()
+pensize(2)
+color(colorvar)
+setposition(x_value,y_value)
+pendown()
+begin_fill()
+forward(bottom)
+backward(bottom)
+right(81)
+forward(32)
+
+right(218)
+forward(30)
+end_fill()
+right(90)
+backward(bottom)
+begin_fill()
+circle(45)
+end_fill()
+speechbubble_body()
+def speechbubble_border():
+left(32)
+penup()
+color("black")
+setposition(x_value,y_value)
+forward(bottom)
+backward(bottom)
+right(82)
+pendown()
+forward(33)
+right(218)
+forward(30)
+right(90)
+penup()
+backward(bottom-1)
+forward(bottom)
+left(18)
+pendown()
+circle(46.5,337)
+color(colorvar)
+pensize(5)
+forward(10)
+speechbubble_border()
+#This function illustrates the dialogue of cloud #1
+def speech_cloudtwo_panelone():
+penup()
+setposition(-162.5,385)
+pendown()
+color("white")
+write ("Totally.", font = ("arial", 10, "italic"))
+penup()
+setposition(-162.5,367.5)
+pendown()
+write ("Like an", font = ("arial", 10, "normal"))
+penup()
+setposition(-162.5,350)
+pendown()
+write ("optical", font = ("arial", 10, "bold"))
+penup()
+setposition(-162.5,332.5)
+
+pendown()
+write ("illusion!", font = ("arial", 10, "bold"))
+#This function illustrates hill #1, found at the bottom of each panel
+def hill_one(x,y,length,angle,curve):
+#border
+penup()
+color("black")
+right(90)
+setposition(x,y)
+pendown()
+for i in range(curve):
+forward(length)
+if i % 2 == 0:
+right(angle)
+
+def hillone_coloring(x,y,length,angle,curve):
+penup()
+left(20)
+setposition(x-1,y-3)
+pendown()
+color("chartreuse3")
+begin_fill()
+for i in range(curve):
+forward(length)
+if i % 2 == 0:
+right(angle)
+
+right(70)
+forward(10)
+right(90)
+forward(233)
+right(90)
+forward(50)
+end_fill()
+def hill_two(x,y,length,angle,curve):
+#Border of hill #2
+color("black")
+penup()
+right(90)
+setposition(x,y)
+pendown()
+for i in range(curve):
+forward(length)
+if i % 2 == 0:
+right(angle)
+#Colouring of hill #2
+penup()
+left(20)
+setposition(x-1,y-3)
+pendown()
+color("chartreuse3")
+
+begin_fill()
+for i in range(curve):
+forward(length)
+if i % 2 == 0:
+right(angle)
+
+right(70)
+forward(8)
+right(90)
+forward(230)
+right(90)
+forward(50)
+end_fill()
+#This function illustrates the speechbubble for the rainbow
+def speechbubble_rainbow(x_value,y_value,var,bottom=15):
+def speechbubble_body():
+penup()
+color(var)
+setposition(x_value,y_value)
+pendown()
+begin_fill()
+forward(bottom-3)
+backward(bottom-3)
+right(81)
+forward(30)
+right(218)
+forward(30)
+end_fill()
+right(90)
+backward(bottom)
+begin_fill()
+circle(70)
+end_fill()
+speechbubble_body()
+def speechbubble_border():
+left(26)
+penup()
+color("black")
+setposition(x_value-3,y_value+4)
+forward(bottom)
+backward(bottom)
+right(82)
+pendown()
+forward(35)
+right(218)
+forward(33)
+right(90)
+penup()
+backward(bottom-1)
+forward(bottom)
+
+left(18)
+pendown()
+circle(71,345)
+color(var)
+pensize(5)
+forward(10)
+speechbubble_border()
+#This function illustrates the rainbow's dialogue
+def speech_rainbow(x,y):
+penup()
+setposition(-293,365)
+pendown()
+color("white")
+write ("Do you ever", font = ("arial", 10, "normal"))
+penup()
+setposition(x-5,y-2.5)
+pendown()
+write ("wonder if, like, we're", font = ("arial", 10, "normal"))
+penup()
+setposition(x,y-25)
+pendown()
+write ("just the figment of", font = ("arial", 10, "normal"))
+penup()
+setposition(x+1,y-45)
+pendown()
+write ("someone else's", font = ("arial", 10, "normal"))
+penup()
+setposition(x+5,y-68)
+pendown()
+write ("imagination?", font = ("arial", 11, "bold"))
+#This function illustrates the entirety of cloud #2
+def cloudone_panel_two():
+pendown()
+left(270)
+pensize(4)
+cloud_border(-300,-230)
+pensize(1)
+cloud_body(-300,-230)
+cloud_eyes_panel_two(-300,-230)
+cloud_mouth_panel_two(-295,-230)
+def cloudtwo_panel_two():
+right(50)
+pensize(4)
+cloud_border(-90,-180)
+pensize(1)
+cloud_body(-90,-180)
+def cloudtwo_eyes(x_value,y_value):
+left(90)
+penup()
+
+setposition(x_value-10,y_value-5)
+color("black")
+for i in range(2):
+pendown()
+begin_fill()
+circle(3.5)
+end_fill()
+penup()
+forward(20)
+#Cloud eye rings:
+setposition(x_value-5,y_value)
+for i in range(2):
+pendown()
+circle(10)
+penup()
+forward(20)
+cloudtwo_eyes(-80,-160)
+def cloudtwo_mouth(x_value,y_value):
+penup()
+pensize(1)
+left(120)
+setposition(x_value,y_value)
+pensize(4)
+pendown()
+right(160)
+circle(20,60)
+penup()
+right(180)
+setposition(x_value+6,y_value-3)
+pendown()
+color("white")
+begin_fill()
+circle(4,180)
+end_fill()
+cloudtwo_mouth(-105,-190)
+#This function illustrates a sun
+def sun(x,y,length,radius,a_value,b_value,c,d):
+penup()
+setposition(x,y)
+color("gold")
+pendown()
+begin_fill()
+for i in range(18):
+circle(radius,180)
+right(200)
+end_fill()
+penup()
+right(90)
+setposition(a_value,b_value)
+
+pendown()
+color("palegoldenrod")
+begin_fill()
+circle(radius*3-1)
+end_fill()
+penup()
+left(90)
+setposition(x,y)
+color("black")
+pendown()
+for i in range(18):
+circle(radius,180)
+right(200)
+penup()
+setposition(c,d)
+forward(radius*4)
+pendown()
+circle(radius*3)
+penup()
+#This function illustrates the dialogue of cloud #1 in panel #2
+def speechcloudone_paneltwo(x,y):
+penup()
+setposition(x-11,y)
+pendown()
+color("black")
+write ("Who are you", font = ("arial", 9, "bold"))
+penup()
+setposition(x-5,y-20)
+pendown()
+write (" talking to?", font = ("arial", 9, "bold"))
+#This function illustrates a bird
+def bird(x,y,radius,length):
+penup()
+setposition(x,y)
+pendown()
+color("black")
+for i in range(2):
+circle(radius,length)
+right(90)
+right(320)
+pensize(2.8)
+panels()
+pensize(1.5)
+right(260)
+cloudone_panel_two()
+right(340)
+cloudtwo_panel_two()
+color("black")
+pensize(2)
+
+right(190)
+sun(-375,-100,20,10,-346.3,-98,-360,-125)
+left(375)
+sun(-375,335,20,10,-346.3,345,-355,315)
+left(175)
+rainbow_drawing()
+pensize(5)
+right(180)
+cloud_panel_one()
+right(165)
+cloudtwo_panel_one()
+penup()
+right(65)
+speechbubble_cloud(-140,320,"darkgrey")
+speech_cloudtwo_panelone()
+pensize(3)
+left(87)
+hill_one(-163,62,21,5,8)
+hillone_coloring(-160,62,20.5,5,8)
+hill_two(-316,75,30,5,8)
+hill_one(-398,77,30,5,8)
+hillone_coloring(-398,76.8,30,5,8)
+pensize(2)
+right(50)
+speechbubble_rainbow(-250,250,"cornflowerblue")
+speech_rainbow(-310,345)
+pensize(1)
+flowerone_body(-370,65,5)
+flowerone_outline(-370,65,2)
+left(90)
+stem(10)
+flowertwo_body(-240,60,5)
+flowertwo_outline(-240,60,2)
+left(270)
+stem(10)
+flowerone_body(-50,70,5)
+flowerone_outline(-50,70,2)
+right(160)
+stem(10)
+flowerthree_body(-320,47,3)
+flowerthree_outline(-320,47,2)
+left(240)
+flowerone_body(-270,35,2)
+flowerone_outline(-270,35,1)
+right(160)
+flowerone_body(-150,42,2)
+flowerone_outline(-150,42,1)
+right(200)
+flowertwo_body(-95,35,3)
+
+flowertwo_outline(-95,35,2)
+left(260)
+flowerthree_body(-145,83,5)
+flowerthree_outline(-145,83,2)
+right(160)
+stem(12)
+left(172)
+pensize(3)
+hill_one(-163,-360,21,5,8)
+hillone_coloring(-160,-360,20.5,5,8)
+hill_two(-316,-347,30,5,8)
+left(250)
+hillone_coloring(-398,-342.8,30,5,8)
+hill_one(-398,-343,21,5,8)
+left(30)
+pensize(1)
+flowerone_body(-370,-355,5)
+flowerone_outline(-370,-355,2)
+left(90)
+stem(10)
+flowertwo_body(-240,-360,5)
+flowertwo_outline(-240,-360,2)
+left(270)
+stem(10)
+flowerone_body(-50,-350,5)
+flowerone_outline(-50,-350,2)
+right(160)
+stem(10)
+flowerthree_body(-320,-373,3)
+flowerthree_outline(-320,-373,2)
+left(240)
+flowerone_body(-270,-385,2)
+flowerone_outline(-270,-385,1)
+right(160)
+flowerone_body(-150,-378,2)
+flowerone_outline(-150,-378,1)
+right(200)
+flowertwo_body(-95,-385,3)
+flowertwo_outline(-95,-385,2)
+left(260)
+flowerthree_body(-145,-337,5)
+flowerthree_outline(-145,-337,2)
+right(160)
+stem(12)
+speechbubble_cloud(-230,-220,"whitesmoke")
+speechcloudone_paneltwo(-211,-242)
+pensize(1.5)
+left(270)
+bird(-30,380,20,70)
+
+bird(-10,360,15,70)
+bird(-30,-50,20,70)
+bird(-10,-70,15,70)
